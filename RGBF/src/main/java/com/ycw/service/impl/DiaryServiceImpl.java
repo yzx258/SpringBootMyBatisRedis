@@ -72,7 +72,7 @@ public class DiaryServiceImpl implements DiaryService{
 	public ResponseData getById(int id) {
 		String key = "user-" + id;
 		Jedis jedis = new Jedis("localhost");
-		System.out.println("连接成功");
+		System.out.println("连接成功："+jedis.ping());
 		boolean hasKey = jedis.exists(key);
 		if(hasKey){
 			String aa = jedis.get(key);

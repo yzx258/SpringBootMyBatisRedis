@@ -3,6 +3,7 @@ package com.ycw.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class RequestController {
@@ -22,4 +23,19 @@ public class RequestController {
     public String getTables() {
         return "tables";
     }
+
+    @RequestMapping(path="/Test",method=RequestMethod.GET)
+    public ModelAndView getTabless() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/ycw/index111");
+        return mav;
+    }
+
+    @RequestMapping(path="/Test1",method=RequestMethod.GET)
+    public ModelAndView getTablesss() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("index");
+        return mav;
+    }
+
 }
